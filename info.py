@@ -51,7 +51,7 @@ NO_RESULTS_MSG = bool(environ.get("NO_RESULTS_MSG", False)) # True if you want n
 
 # MongoDB information
 DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://filmaxstrem:akshay@filmaxstrem.kf43yof.mongodb.net/?retryWrites=true&w=majority&appName=filmaxstrem")
-DATABASE_NAME = environ.get('DATABASE_NAME', "Filmaxstream")
+DATABASE_NAME = environ.get('DATABASE_NAME', "filmaxstream")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 
 # Verify
@@ -106,8 +106,8 @@ else:
     ON_HEROKU = False
 BIND_ADRESS = str(getenv('WEB_SERVER_BIND_ADDRESS', '0.0.0.0'))
 FQDN = str(getenv('FQDN', BIND_ADRESS)) if not ON_HEROKU or getenv('FQDN') else APP_NAME+'.herokuapp.com'
-URL = "https://{}/".format(FQDN) if ON_HEROKU or NO_PORT else \
-    "https://{}/".format(FQDN, PORT)
+URL = "https://filmaxstream1-5dadef9b3371.herokuapp.com/".format(FQDN) if ON_HEROKU or NO_PORT else \
+    "https://filmaxstream1-5dadef9b3371.herokuapp.com/".format(FQDN, PORT)
 SLEEP_THRESHOLD = int(environ.get('SLEEP_THRESHOLD', '60'))
 WORKERS = int(environ.get('WORKERS', '4'))
 SESSION_NAME = str(environ.get('SESSION_NAME', 'LazyBot'))
@@ -122,9 +122,9 @@ else:
     ON_HEROKU = False
 HAS_SSL=bool(getenv('HAS_SSL',True))
 if HAS_SSL:
-    URL = "https://{}/".format(FQDN)
+    URL = "https://filmaxstream1-5dadef9b3371.herokuapp.com/".format(FQDN)
 else:
-    URL = "http://{}/".format(FQDN)
+    URL = "https://filmaxstream1-5dadef9b3371.herokuapp.com/".format(FQDN)
 
 # add premium logs channel id
 PREMIUM_LOGS = int(environ.get('PREMIUM_LOGS', ''))
